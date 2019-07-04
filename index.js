@@ -64,8 +64,8 @@ var { transform } = core
 var astOptions = babelrc
 
 var defineValues = {
-  source: utils.getCrtPath('source'),
-  target: utils.getCrtPath('target')
+  source: 'replace_source_here',
+  target: 'replace_target_here'
 }
 
 async function taskEntry () {
@@ -73,8 +73,8 @@ async function taskEntry () {
   utils.log(`原始目录: ${defineValues.source}`)
   utils.log(`生成目录: ${defineValues.target}`)
   var { source, target } = defineValues
-  sh.rm('-rf',utils.getCrtPath('./replace_target_here')+'/*')
-  var targetHandleFile = utils.getCrtPath('./replace_source_here')
+  sh.rm('-rf', utils.getCrtPath('./' + defineValues.target) + '/*')
+  var targetHandleFile = utils.getCrtPath('./' + defineValues.source)
   utils.loopFile(targetHandleFile, file => {
     totalctn = totalctn + replaceAstAndWriteIntoTargetFolder(file)
   })
@@ -157,9 +157,9 @@ function replaceAstAndWriteIntoTargetFolder (targetHandleFile) {
     }
   })
   var result = core.transformFromAst(crtAstValue, astOptions)
-  var resultHandleFile = targetHandleFile.replace('replace_source_here', 'replace_target_here')
+  var resultHandleFile = targetHandleFile.replace(defineValues.source, defineValues.target)
   var resultHandleParentdir = path.resolve(resultHandleFile, '..')
-  sh.mkdir('-p',resultHandleParentdir);
+  sh.mkdir('-p', resultHandleParentdir)
   utils.writeStringToFile(resultHandleFile, result.code)
   utils.log(`处理文件结束: 本次替换了${findctn}次`)
   return findctn
