@@ -44,7 +44,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "ora": "^3.0.0",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.3",
     "transform-runtime": "^0.0.0",
     "unzipper": "^0.9.3"
   }

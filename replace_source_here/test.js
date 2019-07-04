@@ -22,6 +22,13 @@ class FirstName extends Component {
 						>
 							{form.getFieldDecorator('surname', {})}
 						</Form.Item>
+						<Form.Item
+							label={formatMessage({
+								id: 'mybeforemsg.surnamebb',
+							})}
+						>
+							{form.getFieldDecorator('surnamebb', {})}
+						</Form.Item>
 					</Form>
 				</parent>
 			</div>

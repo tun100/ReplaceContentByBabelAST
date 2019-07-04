@@ -9,7 +9,6 @@ class FirstName extends Component {
 		// test code
 		var a = 1 + 203;
 	}
-
 	render() {
 		return (
 			<div>
@@ -17,17 +16,18 @@ class FirstName extends Component {
 				<parent>
 					<Form>
 						<Form.Item
-							label={
-								<ErrorTooltip
-									form={form}
-									formName={'surname'}
-									form={formatMessage({
-										id: 'mybeforemsg.surname',
-									})}
-								/>
-							}
+							label={formatMessage({
+								id: 'mybeforemsg.surname',
+							})}
 						>
 							{form.getFieldDecorator('surname', {})}
+						</Form.Item>
+						<Form.Item
+							label={formatMessage({
+								id: 'mybeforemsg.surnamebb',
+							})}
+						>
+							{form.getFieldDecorator('surnamebb', {})}
 						</Form.Item>
 					</Form>
 				</parent>
