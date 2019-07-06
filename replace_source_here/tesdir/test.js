@@ -17,17 +17,17 @@ class FirstName extends Component {
 					<Form>
 						<Form.Item
 							label={formatMessage({
-								id: 'mybeforemsg.surname',
+								id: 'mybeforemsg.myname',
 							})}
 						>
-							{form.getFieldDecorator('surname', {})}
+							{form.getFieldDecorator('myname', {})}
 						</Form.Item>
 						<Form.Item
 							label={formatMessage({
-								id: 'mybeforemsg.surnamebb',
+								id: 'mybeforemsg.mynamebb',
 							})}
 						>
-							{form.getFieldDecorator('surnamebb', {})}
+							{form.getFieldDecorator('mynamebb', {})}
 						</Form.Item>
 					</Form>
 				</parent>

@@ -18,15 +18,15 @@ class FirstName extends Component {
 				<other />
 				<parent>
 					<Form>
-						<Form.Item label={<ErrorTooltip form={form} formName={'surname'} form={formatMessage({
-            id: 'mybeforemsg.surname'
+						<Form.Item label={<ErrorTooltip form={form} formName={'myname'} form={formatMessage({
+            id: 'mybeforemsg.myname'
           })} />}>
-							{form.getFieldDecorator('surname', {})}
+							{form.getFieldDecorator('myname', {})}
 						</Form.Item>
-						<Form.Item label={<ErrorTooltip form={form} formName={'surnamebb'} form={formatMessage({
-            id: 'mybeforemsg.surnamebb'
+						<Form.Item label={<ErrorTooltip form={form} formName={'mynamebb'} form={formatMessage({
+            id: 'mybeforemsg.mynamebb'
           })} />}>
-							{form.getFieldDecorator('surnamebb', {})}
+							{form.getFieldDecorator('mynamebb', {})}
 						</Form.Item>
 					</Form>
 				</parent>
